@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samriddh Enterprises | Complete Electrical Transformer Manufacturing Solutions</title>
+  <style>
+    :root {
+      --navy: #0B2545;
+      --navy-dark: #071930;
+      --electric: #0077FF;
+      --electric-light: #3898FF;
+      --copper: #C87D32;
+      --copper-light: #E29B52;
+      --steel-bg: #F3F6FA;
+      --card-bg: #FFFFFF;
+      --text-main: #1A2634;
+      --text-muted: #526377;
+      --border: #DCE4EE;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: var(--text-main);
+      background-color: var(--steel-bg);
+      line-height: 1.6;
+    }
+
+    .blueprint-bg {
+      background-color: var(--navy-dark);
+      background-image:
+        linear-gradient(rgba(0, 119, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 119, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
+    }
+
+    header {
+      background: rgba(7, 25, 48, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--copper);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+
+    .brand-text h1 {
+      font-size: 1.25rem;
+      letter-spacing: 0.04em;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--copper-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: #E2EAF4;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--copper-light);
+    }
+
+    .btn-cta-nav {
+      background: var(--electric);
+      color: #FFFFFF !important;
+      padding: 0.55rem 1.1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn-cta-nav:hover {
+      background: var(--electric-light);
+    }
+
+    .hero {
+      color: #FFFFFF;
+      padding: 5rem 1.5rem;
+      border-bottom: 4px solid var(--copper);
+    }
+
+    .hero-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(200, 125, 50, 0.18);
+      border: 1px solid var(--copper);
+      color: var(--copper-light);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 1.15rem;
+    }
+
+    .hero h2 span {
+      color: var(--electric-light);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #C8D6E5;
+      margin-bottom: 2rem;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--electric);
+      color: #FFFFFF;
+      padding: 0.85rem 1.65rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s, background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--electric-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #FFFFFF;
+      padding: 0.85rem 1.65rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1.5px solid var(--copper);
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(200, 125, 50, 0.15);
+    }
+
+    .schematic-card {
+      background: rgba(11, 37, 69, 0.85);
+      border: 1.5px solid rgba(56, 152, 255, 0.35);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    .schematic-caption {
+      margin-top: 0.85rem;
+      font-size: 0.82rem;
+      color: #9FB3C8;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 0.65rem;
+    }
+
+    section {
+      padding: 4.5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.25rem;
+    }
+
+    .section-header .eyebrow {
+      color: var(--copper);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-header h3 {
+      font-size: 2.1rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--navy);
+      border-radius: 10px;
+      padding: 1.85rem;
+      box-shadow: 0 6px 18px rgba(11, 37, 69, 0.05);
+      transition: transform 0.2s, border-top-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-top-color: var(--copper);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      background: rgba(0, 119, 255, 0.1);
+      color: var(--electric);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.15rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .card h4 {
+      font-size: 1.22rem;
+      color: var(--navy);
+      margin-bottom: 0.65rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .process-band {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .step-box {
+      padding: 1.5rem;
+      border-left: 3px solid var(--copper);
+      background: var(--steel-bg);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .step-num {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--electric);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+    }
+
+    .step-box h4 {
+      color: var(--navy);
+      margin-bottom: 0.45rem;
+    }
+
+    .step-box p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 2.5rem;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(11, 37, 69, 0.07);
+    }
+
+    .contact-info {
+      padding: 2.5rem;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-info h3 {
+      font-size: 1.65rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-info p {
+      color: #C8D6E5;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .info-item {
+      margin-bottom: 1.35rem;
+    }
+
+    .info-item strong {
+      display: block;
+      color: var(--copper-light);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.2rem;
+    }
+
+    .info-item span, .info-item a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .contact-form {
+      padding: 2.5rem;
+    }
+
+    .contact-form h4 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.72rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--electric);
+    }
+
+    footer {
+      background: var(--navy-dark);
+      color: #9FB3C8;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.9rem;
+      border-top: 3px solid var(--copper);
+    }
+
+    footer strong {
+      color: #FFFFFF;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="brand">
+        <svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="14" fill="#0B2545" stroke="#C87D32" stroke-width="4"/>
+          <path d="M44 26H27C22.5 26 19 29.5 19 34V43C19 47.5 22.5 51 27 51H39C43.5 51 47 54.5 47 59V68C47 72.5 43.5 76 39 76H20" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+          <path d="M81 26H58V76H81M58 51H76" stroke="#C87D32" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M55 16L36 53H51L44 84L68 45H52L55 16Z" fill="#0077FF"/>
+        </svg>
+        <div class="brand-text">
+          <h1>SAMRIDDH ENTERPRISES</h1>
+          <span>Powering Precision. Complete Solutions.</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#process">Manufacturing</a></li>
+          <li><a href="#about">Why Us</a></li>
+          <li><a href="#contact" class="btn-cta-nav">Request Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero blueprint-bg">
+    <div class="hero-grid">
+      <div>
+        
+        <h2>Complete Electrical Transformer Manufacturing Solutions <span>Under One Roof.</span></h2>
+        <p>
+          Samriddh Enterprises delivers high-efficiency transformer manufacturing, precision copper winding, CRGO core assembly, and custom industrial power solutions built for reliability and long service life.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Get a Custom Quote</a>
+          <a href="#solutions" class="btn-secondary">Explore Products</a>
+        </div>
+      </div>
+
+      <div class="schematic-card">
+        <svg viewBox="0 0 360 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect x="95" y="30" width="170" height="160" rx="6" fill="none" stroke="#3898FF" stroke-width="3"/>
+          <rect x="125" y="55" width="110" height="110" rx="4" fill="none" stroke="#3898FF" stroke-width="2" stroke-dasharray="5 4"/>
+          <g stroke="#E29B52" stroke-width="4" stroke-linecap="round">
+            <line x1="78" y1="65" x2="112" y2="65"/>
+            <line x1="78" y1="80" x2="112" y2="80"/>
+            <line x1="78" y1="95" x2="112" y2="95"/>
+            <line x1="78" y1="110" x2="112" y2="110"/>
+            <line x1="78" y1="125" x2="112" y2="125"/>
+            <line x1="78" y1="140" x2="112" y2="140"/>
+            <line x1="78" y1="155" x2="112" y2="155"/>
+          </g>
+          <g stroke="#E29B52" stroke-width="4" stroke-linecap="round">
+            <line x1="248" y1="72" x2="282" y2="72"/>
+            <line x1="248" y1="92" x2="282" y2="92"/>
+            <line x1="248" y1="112" x2="282" y2="112"/>
+            <line x1="248" y1="132" x2="282" y2="132"/>
+            <line x1="248" y1="152" x2="282" y2="152"/>
+          </g>
+          <line x1="35" y1="65" x2="78" y2="65" stroke="#FFFFFF" stroke-width="2"/>
+          <line x1="35" y1="155" x2="78" y2="155" stroke="#FFFFFF" stroke-width="2"/>
+          <circle cx="35" cy="65" r="4" fill="#0077FF"/>
+          <circle cx="35" cy="155" r="4" fill="#0077FF"/>
+
+          <line x1="282" y1="72" x2="325" y2="72" stroke="#FFFFFF" stroke-width="2"/>
+          <line x1="282" y1="152" x2="325" y2="152" stroke="#FFFFFF" stroke-width="2"/>
+          <circle cx="325" cy="72" r="4" fill="#E29B52"/>
+          <circle cx="325" cy="152" r="4" fill="#E29B52"/>
+
+          <text x="22" y="50" fill="#9FB3C8" font-size="11" font-family="monospace">HV INPUT</text>
+          <text x="278" y="56" fill="#E29B52" font-size="11" font-family="monospace">LV OUTPUT</text>
+          <text x="142" y="114" fill="#3898FF" font-size="11" font-family="monospace">CRGO CORE</text>
+        </svg>
+        <div class="schematic-caption">
+          <span>MODEL: SE-TX-SERIES</span>
+          <span>LOW LOSS &bull; HIGH THERMAL STABILITY</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solutions">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Our Capabilities</span>
+        <h3>Complete Transformer Manufacturing Solutions</h3>
+        <p>From raw core lamination and precision coil winding to fully assembled and tested transformer units—all engineered at a single destination.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">01</div>
+          <h4>Distribution &amp; Power Transformers</h4>
+          <p>Energy-efficient oil-immersed transformers engineered for industrial plants, commercial complexes, utilities, and infrastructure grids.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">02</div>
+          <h4>Dry-Type &amp; Cast Resin Units</h4>
+          <p>Safe, low-maintenance indoor transformers ideal for high-rise buildings, hospitals, data centers, and fire-sensitive environments.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">03</div>
+          <h4>Precision Copper &amp; Aluminum Coils</h4>
+          <p>Custom HV/LV layer windings, helical coils, and foil windings manufactured with strict insulation integrity and low impedance losses.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">04</div>
+          <h4>CRGO Core Assemblies</h4>
+          <p>High-grade Cold Rolled Grain Oriented silicon steel core cutting, step-lap stacking, and low-no-load-loss magnetic core builds.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">05</div>
+          <h4>Custom Control &amp; Isolation Units</h4>
+          <p>Bespoke single-phase and three-phase isolation, step-up/step-down, and furnace transformers tailored to exact voltage specs.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">06</div>
+          <h4>Overhauling, Testing &amp; Spares</h4>
+          <p>Complete transformer refurbishment, oil filtration, winding replacement, and routine electrical testing for maximum asset uptime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process-band">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Quality Assurance</span>
+        <h3>Integrated Production Workflow</h3>
+        <p>Every unit undergoes disciplined engineering checks at each manufacturing stage.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-box">
+          <div class="step-num">Stage 01</div>
+          <h4>Electrical &amp; Thermal Design</h4>
+          <p>Optimized flux density, temperature rise calculations, and short-circuit withstand modeling.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-num">Stage 02</div>
+          <h4>Core &amp; Winding Fabrication</h4>
+          <p>Precision CNC winding and burr-free CRGO core stacking for minimal core and copper losses.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-num">Stage 03</div>
+          <h4>Vacuum Drying &amp; Tanking</h4>
+          <p>Controlled moisture extraction, dielectric oil filling, and heavy-duty radiator tank assembly.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-num">Stage 04</div>
+          <h4>Routine &amp; Impulse Testing</h4>
+          <p>Turns ratio, winding resistance, insulation megger, no-load/load loss, and high-voltage dielectric tests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Why Samriddh Enterprises</span>
+        <h3>Single-Point Accountability &amp; Engineering Precision</h3>
+        <p>All types of transformer manufacturing service availability across India.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top: 0;">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info blueprint-bg">
+          <div>
+            <h3>Connect With Our Engineering Team</h3>
+            <p>Share your requirements for a prompt technical/making cost proposal.</p>
+
+            <div class="info-item">
+              <strong>Office &amp; Facility Address</strong>
+              <span>GCB4, Gurudev Complex, Commercial Building, Silvassa 396230</span>
+            </div>
+
+            <div class="info-item">
+              <strong>Direct Phone</strong>
+              <a href="tel:+917877612167">+91 7877612167</a>
+            </div>
+
+            <div class="info-item">
+              <strong>Email Address</strong>
+              <a href="mailto:shuklaprashant458@gmail.com">shuklaprashant458@gmail.com</a>
+            </div>
+          </div>
+
+          <div style="font-size: 0.85rem; color: #9FB3C8; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1rem;">
+            Samriddh Enterprises &mdash; Powering Precision. Complete Solutions.
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h4>Request a Quote or Consultation</h4>
+          <form id="quoteForm">
+            <div class="form-group">
+              <label for="name">Full Name / Company Name</label>
+              <input type="text" id="name" required placeholder="e.g., Prashant Shukla / samriddhenterprises" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="e.g., +91 98XXXXXXXX" />
+            </div>
+<div class="contact-form">
+          <h4>Send Us an Inquiry</h4>
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="89941d46-8105-4dd5-bc1b-71a58b60d38d" />
+            <input type="hidden" name="subject" value="New Inquiry from Samriddh Enterprises Website" />
+            <input type="hidden" name="from_name" value="Samriddh Enterprises Website" />
+            <input type="checkbox" name="botcheck" style="display: none;" />
+
+            <div class="form-group">
+              <label for="product">Requirement Category</label>
+              <select id="product">
+                <option value="Distribution / Power Transformer">Distribution / Power Transformer</option>
+                <option value="Dry-Type Transformer">Dry-Type Transformer</option>
+                <option value="Transformer Coils & Windings">Transformer Coils &amp; Windings</option>
+                <option value="CRGO Core Assembly">CRGO Core Assembly</option>
+                <option value="Repair / Overhauling / Spares">Repair / Overhauling / Spares</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="details">Technical Specifications (kVA, Primary/Secondary Voltage, Quantity)</label>
+              <textarea id="details" rows="3" required placeholder="Enter kVA rating, voltage ratio, or project details..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%;">Send Inquiry via Email</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 <strong>Samriddh Enterprises</strong>. All Rights Reserved.</p>
+  </footer>
+
+  <!--<script>
+    document.getElementById("quoteForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const product = document.getElementById("product").value;
+      const details = document.getElementById("details").value.trim();
+
+      const subject = encodeURIComponent("Transformer Inquiry: " + product + " - " + name);
+      const body = encodeURIComponent(
+        "Hello Samriddh Enterprises,\n\n" +
+        "Name / Company: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Requirement: " + product + "\n\n" +
+        "Technical Details:\n" + details + "\n\n" +
+        "Sent from Samriddh Enterprises Website"
+      );
+
+      window.location.href = "mailto:samriddhenterprises@gmail.com?subject=" + subject + "&body=" + body;
+    });
+  </script>-->
+
+</body>
+</html>
